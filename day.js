@@ -1,5 +1,6 @@
 let a = 8;
 
-let natija a - 5;
 
-console.log(natija);
+if('let > 4'){
+    console.log("boqcha yoshi")
+}

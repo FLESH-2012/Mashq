@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f172a;
+    overflow: hidden;
+    transition: background 0.8s ease;
+}
+.background-blobs {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.blob {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: move 10s infinite alternate;
+}
+
+.blob:nth-child(2) {
+    right: 10%;
+    bottom: 10%;
+    background: linear-gradient(135deg, #ec4899, #f59e0b);
+    animation-delay: -5s;
+}
+
+@keyframes move {
+    from { transform: translate(0, 0); }
+    to { transform: translate(100px, 100px); }
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 24px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    max-width: 400px;
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 1rem; letter-spacing: -1px; }
+p { opacity: 0.8; line-height: 1.6; margin-bottom: 2rem; }
+
+#color-code {
+    display: block;
+    margin-bottom: 1.5rem;
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: #3b82f6;
+    background: rgba(0,0,0,0.2);
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+button {
+    background: white;
+    color: #0f172a;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+    </style>
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+
+    <div class="container">
+        <div class="glass-card">
+            <h1>Frontend Forge</h1>
+            <p>Interaktiv interfeys va dinamik ranglar dunyosiga xush kelibsiz.</p>
+            <div class="stats">
+                <span id="color-code">#f0f2f5</span>
+            </div>
+            <button id="action-btn">Vibeni o'zgartirish</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+</body>
+</html>
